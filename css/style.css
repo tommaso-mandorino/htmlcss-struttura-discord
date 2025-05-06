@@ -39,6 +39,12 @@
     --page-banner-bg-color: orchid;
     /* #region Page banner */
 
+    /* #region Panels */
+    --first-panel-bg-color: dodgerblue;
+    --second-panel-bg-color: pink;
+    --single-panel-bg-color: green;
+    /* #endregion Panels */
+
     /* #endregion colors */
 }
 /* #endregion Variables */
@@ -47,14 +53,19 @@
 /* #region Utility */
 
 /* #region Containers */
-.container-normal {
-    max-width: var(--container-normal-max-width);
-    margin: var(--margin-centered);
-}
+.container {
 
-.container-small {
-    max-width: var(--container-small-max-width);
     margin: var(--margin-centered);
+    padding: var(--padding-big);
+
+    &.container-normal {
+        max-width: var(--container-normal-max-width);
+    }
+    
+    &.container-small {
+        max-width: var(--container-small-max-width);
+    }
+
 }
 /* #endregion Containers */
 
@@ -88,6 +99,37 @@
 
     }
 
+    .panel {
+
+        display: flex;
+        
+        &.double-panel {
+
+            height: 500px;
+
+            :first-child {
+                width: 60%;
+                background-color: var(--first-panel-bg-color);
+            }
+
+            :last-child {
+                width: 40%;
+                background-color: var(--second-panel-bg-color);
+            }
+
+        }
+
+        &.single-panel {
+            height: 1000px;
+            background-color: var(--single-panel-bg-color);
+        }
+    
+        &.reversed {
+            flex-direction: row-reverse;
+        }
+    
+    }
+
 }
 /* #endregion Style */
 
@@ -99,7 +141,7 @@
     #page-menu {
 
         display: flex;
-        margin: var(--margin-centered);
+        padding: var(--padding-small);
 
         span {
 
