@@ -1,11 +1,135 @@
-/* Resets */
+/* #region Resets */
 * {
     margin: 0;
     box-sizing: border-box;
+    text-decoration-line: none;
+}
+/* #endregion Resets */
+
+
+/* #region Variables */
+:root {
+    /* #region Sizes */
+    --container-normal-max-width: 1200px;
+    --container-small-max-width: 1000px;
+    /* #endregion Sizes */
+
+    /* #region Borders */
+    --border: 2px dashed black;
+    /* #endregion Borders */
+
+    /* #region Margins */
+    --margin-centered: 0 auto;
+    /* #endregion Margins */
+
+    /* #region Paddings */
+    --padding-small: 10px;
+    --padding-big: 50px;
+    /* #endregion Paddings */
+
+    /* #region colors */
+
+    /* #region Page menu */
+    --page-menu-section-bg-color: lightblue;
+    --page-menu-bg-color: goldenrod;
+    /* #region Page menu */
+
+    /* #region Page banner */
+    --page-banner-section-bg-color: navy;
+    --page-banner-bg-color: orchid;
+    /* #region Page banner */
+
+    /* #endregion colors */
+}
+/* #endregion Variables */
+
+
+/* #region Utility */
+
+/* #region Containers */
+.container-normal {
+    max-width: var(--container-normal-max-width);
+    margin: var(--margin-centered);
 }
 
-/* Utility classes */
+.container-small {
+    max-width: var(--container-small-max-width);
+    margin: var(--margin-centered);
+}
+/* #endregion Containers */
 
-.container-normal {
-    
+/* #endregion Utility */
+
+
+
+/* #region Style */
+.debug {
+
+    #page-menu-section {
+
+        background-color: var(--page-menu-section-bg-color);
+
+        #page-menu {
+            border: var(--border);
+            background-color: var(--page-menu-bg-color);
+        }
+
+    }
+
+    #page-banner-section {
+
+        background-color: var(--page-banner-section-bg-color);
+        
+        #page-banner {
+            border: var(--border);
+            height: 500px;
+            background-color: var(--page-banner-bg-color);
+        }
+
+    }
+
+}
+/* #endregion Style */
+
+
+#page-menu-section {
+
+    padding: var(--padding-small) 0;
+
+    #page-menu {
+
+        display: flex;
+        margin: var(--margin-centered);
+
+        span {
+
+            display: inline-block;
+            border: var(--border);
+            padding: var(--padding-small);
+            font-size: 20px;
+
+            &#logo-link {
+                width: 20%;
+            }
+
+            &#main-links {
+                width: 60%;
+                text-align: center;
+            }
+
+            &#login-link {
+                width: 20%;
+                text-align: right;
+            }
+
+        }
+
+    }
+
+}
+
+#page-banner-section {
+
+    padding: var(--padding-big) 0;
+
 }
