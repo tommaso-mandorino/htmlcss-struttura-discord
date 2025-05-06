@@ -9,169 +9,117 @@
 
 /* #region Variables */
 :root {
-    /* #region Sizes */
-    --container-normal-max-width: 1200px;
-    --container-small-max-width: 1000px;
-    /* #endregion Sizes */
-
     /* #region Borders */
     --border: 2px dashed black;
     /* #endregion Borders */
 
-    /* #region Margins */
-    --margin-centered: 0 auto;
-    /* #endregion Margins */
+    /* #region Colors */
 
-    /* #region Paddings */
-    --padding-small: 10px;
-    --padding-big: 50px;
-    /* #endregion Paddings */
+    /* Menu */
+    --main-menu-section-bg-color: lightblue;
+    --main-menu-column-bg-color: goldenrod;
 
-    /* #region colors */
+    /* Banner */
+    --banner-section-bg-color: navy;
+    --banner-bg-color: orchid;
 
-    /* #region Page menu */
-    --page-menu-section-bg-color: lightblue;
-    --page-menu-bg-color: goldenrod;
-    /* #region Page menu */
+    /* Section */
+    --section-odd-bg-color: white;
+    --section-even-bg-color: lightgrey;
 
-    /* #region Page banner */
-    --page-banner-section-bg-color: navy;
-    --page-banner-bg-color: orchid;
-    /* #region Page banner */
+    /* Panels */
+    --panel-single-bg-color: green;
+    --panel-image-bg-color: dodgerblue;
+    --panel-text-bg-color: pink;
 
-    /* #region Panels */
-    --first-panel-bg-color: dodgerblue;
-    --second-panel-bg-color: pink;
-    --single-panel-bg-color: green;
-    /* #endregion Panels */
-
-    /* #endregion colors */
+    /* #endregion Colors */
 }
 /* #endregion Variables */
 
 
 /* #region Utility */
-
-/* #region Containers */
+/* Containers */
 .container {
-
-    margin: var(--margin-centered);
-    padding: var(--padding-big);
-
+    display: flex;
+    margin: 0 auto;
+    padding: 50px;
     &.container-normal {
-        max-width: var(--container-normal-max-width);
+        max-width: 1200px;
     }
-    
     &.container-small {
-        max-width: var(--container-small-max-width);
+        max-width: 1000px;
     }
-
 }
-/* #endregion Containers */
-
+/* Containers */
 /* #endregion Utility */
 
 
 
-/* #region Style */
+/* #region Debug */
 .debug {
 
-    #page-menu-section {
-
-        background-color: var(--page-menu-section-bg-color);
-
-        #page-menu {
-            border: var(--border);
-            background-color: var(--page-menu-bg-color);
+    #main-menu-section {
+        background-color: var(--main-menu-section-bg-color);
+        #container-menu {
+            padding: 15px;
+            .main-menu-column {
+                padding: 10px;
+                border: var(--border);
+                background-color: var(--main-menu-column-bg-color);
+                &:nth-child(1) {
+                    width: 20%;
+                }
+                &:nth-child(2) {
+                    width: 60%;
+                    text-align: center;
+                }
+                &:nth-child(3) {
+                    width: 20%;
+                    text-align: right;
+                }
+            }
         }
-
     }
 
-    #page-banner-section {
-
-        background-color: var(--page-banner-section-bg-color);
-        
-        #page-banner {
+    #banner-section {
+        background-color: var(--banner-section-bg-color);
+        #banner {
             border: var(--border);
             height: 500px;
-            background-color: var(--page-banner-bg-color);
+            background-color: var(--banner-bg-color);
         }
-
     }
 
-    .panel {
-
-        display: flex;
-        
-        &.double-panel {
-
-            height: 500px;
-
-            :first-child {
-                width: 60%;
-                background-color: var(--first-panel-bg-color);
+    main {
+        .page-section {
+            &:nth-child(odd) {
+                background-color: var(--section-odd-bg-color);
             }
-
-            :last-child {
-                width: 40%;
-                background-color: var(--second-panel-bg-color);
+            &:nth-child(even) {
+                background-color: var(--section-even-bg-color);
             }
-
+            .panel {
+                border: var(--border);
+                height: 500px;
+                &.panel-image {
+                    width: 60%;
+                    background-color: var(--panel-image-bg-color);
+                }
+                &.panel-text {
+                    width: 40%;
+                    background-color: var(--panel-text-bg-color);
+                }
+                &.panel-single {
+                    width: 100%;
+                    height: 1000px;
+                    background-color: var(--panel-single-bg-color);
+                }
+            }
         }
-
-        &.single-panel {
-            height: 1000px;
-            background-color: var(--single-panel-bg-color);
-        }
-    
-        &.reversed {
-            flex-direction: row-reverse;
-        }
-    
     }
-
 }
-/* #endregion Style */
+/* #region Debug */
 
-
-#page-menu-section {
-
-    padding: var(--padding-small) 0;
-
-    #page-menu {
-
-        display: flex;
-        padding: var(--padding-small);
-
-        span {
-
-            display: inline-block;
-            border: var(--border);
-            padding: var(--padding-small);
-            font-size: 20px;
-
-            &#logo-link {
-                width: 20%;
-            }
-
-            &#main-links {
-                width: 60%;
-                text-align: center;
-            }
-
-            &#login-link {
-                width: 20%;
-                text-align: right;
-            }
-
-        }
-
-    }
-
-}
-
-#page-banner-section {
-
-    padding: var(--padding-big) 0;
-
+body {
+    font-size: 20px;
 }
