@@ -32,6 +32,12 @@
     --panel-image-bg-color: dodgerblue;
     --panel-text-bg-color: pink;
 
+    /* Footer */
+    --footer-color: #23272a;
+
+    /* Bottom bar */
+    --bottom-bar-bg-color: aquamarine;
+
     /* #endregion Colors */
 }
 /* #endregion Variables */
@@ -57,40 +63,49 @@
 
 /* #region Debug */
 .debug {
+    font-size: 20px;
 
-    #main-menu-section {
-        background-color: var(--main-menu-section-bg-color);
-        #container-menu {
-            padding: 15px;
-            .main-menu-column {
-                padding: 10px;
-                border: var(--border);
-                background-color: var(--main-menu-column-bg-color);
-                &:nth-child(1) {
-                    width: 20%;
-                }
-                &:nth-child(2) {
-                    width: 60%;
-                    text-align: center;
-                }
-                &:nth-child(3) {
-                    width: 20%;
-                    text-align: right;
+    /* #region Header */
+    header {
+
+        #main-menu-section {
+            background-color: var(--main-menu-section-bg-color);
+            #container-menu {
+                padding: 15px;
+                .main-menu-column {
+                    padding: 10px;
+                    border: var(--border);
+                    background-color: var(--main-menu-column-bg-color);
+                    &:nth-child(1) {
+                        width: 20%;
+                    }
+                    &:nth-child(2) {
+                        width: 60%;
+                        text-align: center;
+                    }
+                    &:nth-child(3) {
+                        width: 20%;
+                        text-align: right;
+                    }
                 }
             }
         }
-    }
 
-    #banner-section {
-        background-color: var(--banner-section-bg-color);
-        #banner {
-            border: var(--border);
-            height: 500px;
-            background-color: var(--banner-bg-color);
+        #banner-section {
+            background-color: var(--banner-section-bg-color);
+            #banner {
+                border: var(--border);
+                height: 500px;
+                background-color: var(--banner-bg-color);
+            }
         }
-    }
 
+    }
+    /* #endregion Header */
+
+    /* #region Main */
     main {
+
         .page-section {
             &:nth-child(odd) {
                 background-color: var(--section-odd-bg-color);
@@ -116,10 +131,38 @@
                 }
             }
         }
+
     }
+    /* #endregion Main */
+
+    /* #region Footer */
+    footer {
+        background-color: var(--footer-color);
+        #other-links-section {
+            .link-section {
+                flex-grow: 1;
+                height: 500px;
+                border: 2px dashed white;
+                background-color: cadetblue;
+                &:first-child {
+                    border: var(--border);
+                    width: 150px;
+                    background-color: indianred;
+                }
+            }
+        }
+        #bottom-bar {
+            padding: 15px 0;
+            justify-content: space-between;
+            background-color: var(--bottom-bar-bg-color);
+            span {
+                padding: 5px 10px;
+                border: var(--border);
+                background-color: pink;
+            }
+        }
+    }
+    /* #endregion Footer */
+
 }
 /* #region Debug */
-
-body {
-    font-size: 20px;
-}
