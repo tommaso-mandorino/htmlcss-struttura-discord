@@ -1,5 +1,11 @@
+/* Resets */
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
+/* Utility classes */
+
+.container-normal {
+    
+}
