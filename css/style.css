@@ -9,14 +9,22 @@
 
 /* #region Variables */
 :root {
-    /* #region Borders */
-    --border: 2px dashed black;
-    /* #endregion Borders */
+    /* Borders */
+    --border-size: 2px;
+    --border-style: dashed;
+
+    --border-light: var(--border-size) var(--border-style) white;
+    --border-dark: var(--border-size) var(--border-style) black;
+
+    /* Paddings */
+    --section-padding: 50px 0;
 
     /* #region Colors */
 
+    /* Header */
+    --header-bg-color: lightblue;
+
     /* Menu */
-    --main-menu-section-bg-color: lightblue;
     --main-menu-column-bg-color: goldenrod;
 
     /* Banner */
@@ -48,7 +56,6 @@
 .container {
     display: flex;
     margin: 0 auto;
-    padding: 50px;
     &.container-normal {
         max-width: 1200px;
     }
@@ -67,14 +74,14 @@
 
     /* #region Header */
     header {
-
+        padding-bottom: 5px;
+        background-color: var(--header-bg-color);
         #main-menu-section {
-            background-color: var(--main-menu-section-bg-color);
+            padding: 15px;
             #container-menu {
-                padding: 15px;
                 .main-menu-column {
                     padding: 10px;
-                    border: var(--border);
+                    border: var(--border-dark);
                     background-color: var(--main-menu-column-bg-color);
                     &:nth-child(1) {
                         width: 20%;
@@ -92,9 +99,10 @@
         }
 
         #banner-section {
+            padding: var(--section-padding);
             background-color: var(--banner-section-bg-color);
             #banner {
-                border: var(--border);
+                border: var(--border-dark);
                 height: 500px;
                 background-color: var(--banner-bg-color);
             }
@@ -107,6 +115,7 @@
     main {
 
         .page-section {
+            padding: var(--section-padding);
             &:nth-child(odd) {
                 background-color: var(--section-odd-bg-color);
             }
@@ -114,7 +123,7 @@
                 background-color: var(--section-even-bg-color);
             }
             .panel {
-                border: var(--border);
+                border: var(--border-dark);
                 height: 500px;
                 &.panel-image {
                     width: 60%;
@@ -139,26 +148,32 @@
     footer {
         background-color: var(--footer-color);
         #other-links-section {
+            padding: 10px 0 40px;
             .link-section {
                 flex-grow: 1;
                 height: 500px;
-                border: 2px dashed white;
+                border: var(--border-light);
                 background-color: cadetblue;
                 &:first-child {
-                    border: var(--border);
+                    border: var(--border-dark);
                     width: 150px;
                     background-color: indianred;
                 }
             }
         }
-        #bottom-bar {
-            padding: 15px 0;
-            justify-content: space-between;
-            background-color: var(--bottom-bar-bg-color);
-            span {
-                padding: 5px 10px;
-                border: var(--border);
-                background-color: pink;
+        #bottom-bar-section {
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            padding-top: 30px;
+            #bottom-bar {
+                justify-content: space-between;
+                padding: 15px 0;
+                background-color: var(--bottom-bar-bg-color);
+                .bottom-bar-item {
+                    padding: 5px 10px;
+                    border: var(--border-dark);
+                    background-color: pink;
+                }
             }
         }
     }
