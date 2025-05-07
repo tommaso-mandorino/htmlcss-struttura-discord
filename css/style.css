@@ -52,6 +52,7 @@
 
 
 /* #region Utility */
+
 /* Containers */
 .container {
     display: flex;
@@ -63,7 +64,7 @@
         max-width: 1000px;
     }
 }
-/* Containers */
+
 /* #endregion Utility */
 
 
